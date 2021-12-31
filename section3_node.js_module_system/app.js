@@ -10,4 +10,4 @@
 
 import chalk from 'chalk';
 
-console.log(chalk.blue.bgRed.bold.inverse('Success!'));
+console.log(chalk.red.bgBlue.bold.inverse('wrong!'));
