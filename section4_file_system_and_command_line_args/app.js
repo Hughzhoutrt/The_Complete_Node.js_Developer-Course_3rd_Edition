@@ -13,8 +13,22 @@ yargs.version('1.1.0');
 yargs.command({
     command:'add',
     description:'Add a new note',
-    handler: function(){
-        console.log('Add a new new note!');
+    builder: {
+        title: {
+            describe:"Note title",
+            demandOption:true,
+            type:'string'
+        },
+
+        body: {
+            describe:"Note body",
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler: function(argv){
+        console.log('Tile:' + argv.title);
+        console.log('Body:' + argv.body);
     }
 })
 
@@ -47,7 +61,7 @@ yargs.command({
 })
 // add, remove, read, list
 
-console.log(yargs.argv);
+// console.log(yargs.argv);
 
 // const command = process.argv[2];
 
@@ -56,3 +70,5 @@ console.log(yargs.argv);
 // } else if (command === 'remove') {
 //     console.log('Removing note!');
 // }
+
+yargs.parse();
