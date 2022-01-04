@@ -1,5 +1,5 @@
 // import chalk from 'chalk';
-
+const notes = require('./notes.js');
 
 const yargs = require('yargs');
 
@@ -27,8 +27,7 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log('Tile:' + argv.title);
-        console.log('Body:' + argv.body);
+       notes.addNotes(argv.title, argv.body);
     }
 })
 
